@@ -19,7 +19,7 @@ pip install requirements.txt
 
 * You should have a link for a csv file that will be used for testing the model
 * And also csv file name to execute the fraud prediction model on it
-  for the second data you can write: train-data.csv
+  for the second data you can write: train_data.csv
 
 `
 https://linkparacsv.csv
