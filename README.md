@@ -1,5 +1,5 @@
 # risk-rep
-How execute this code:
+How to execute this code:
 
 After download or clone this git repo:
 <br>
