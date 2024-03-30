@@ -25,7 +25,7 @@ pip install requirements.txt
 https://linkparacsv.csv
 `
 `
-train-data.csv
+data-for-fraud-classification.csv
 `
 
 * On the terminal execute:
@@ -33,6 +33,3 @@ train-data.csv
 `
 python predict_fraud.py
 `
-
-
-data-for-fraud-classification.csv
