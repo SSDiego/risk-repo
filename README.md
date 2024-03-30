@@ -6,6 +6,8 @@ On a windows pc open the terminal on a folder and:
 
 `
 python -m venv env
+`
+`
 env\Scripts\activate
 ` 
 
@@ -21,6 +23,8 @@ pip install requirements.txt
 
 `
 https://linkparacsv.csv
+`
+`
 train-data.csv
 `
 
