@@ -33,3 +33,5 @@ data-for-fraud-classification.csv
 `
 python predict_fraud.py
 `
+
+You will see each transaction being classified one by one. and a log file will be generated in the folder with the results. log_predictions_model.csv
