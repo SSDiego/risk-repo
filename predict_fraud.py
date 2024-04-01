@@ -17,6 +17,7 @@ csv_file = input("Please enter the dataset for prediction: ")
 
 def predict_fraud(model, csv_file):
     data = pd.read_csv(csv_file)
+    pred_probability = []
     predictions = []
     
     for index, row in data.iterrows():
@@ -24,8 +25,16 @@ def predict_fraud(model, csv_file):
         transaction_variables = row[['merchant_id', 'user_id', 'transaction_amount', 'device_id']]  
         transaction_array = np.array(transaction_variables).reshape(1, -1)
         fraud_probability = model.predict_proba(transaction_array)[:, 1]
+        fraud_prediction = model.predict(transaction_array)
        
         if fraud_probability[0] >= 0.3:
+            print(f"Row {index + 1}: Predicted fraud = Yes")
+            pred_probability.append("Yes")
+        else:
+            print(f"Row {index + 1}: Predicted fraud = No")
+            pred_probability.append("No")
+
+        if fraud_prediction[0] == 1:
             print(f"Row {index + 1}: Predicted fraud = Yes")
             predictions.append("Yes")
         else:
@@ -34,6 +43,7 @@ def predict_fraud(model, csv_file):
         
     
     data['Predicted_Fraud'] = predictions
+    data['Prob_prediction'] = pred_probability
     data.to_csv('log_predictions_model.csv', index=False)
 
 
